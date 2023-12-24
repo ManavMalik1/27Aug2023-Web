@@ -42,10 +42,7 @@
     justify-content: space-between;
 }
 
-.listItemText,
-.btnGroup{
-    /* border: 1px solid green; */
-}
+
 
 .listItemText{
     width: 45%;
