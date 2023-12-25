@@ -1,0 +1,51 @@
+1. We need the collection to insert data/document
+    - db.Teachers.insertOne(object);
+    - Example: 
+    db.Teachers.insertOne({
+        name: 'Abhishek',
+        subject: 'C++'
+    })
+
+2. To insert multiple documents: 
+    db.Teachers.insertMany([
+        { name: 'Monu', subject: 'Java' }, 
+        { name: 'Samarth', subject: 'Web' }, 
+        { name: 'Abhijeet', subject: 'Data Science' }
+    ])
+
+
+
+
+to insert data in file::
+-db.teacher.insertOne();
+ans::
+ db.teacher.insertOne({ name: 'manav', subject: 'C++' })
+{
+  acknowledged: true,
+  insertedId: ObjectId('65890b30398e41625aa38bb0')
+}
+
+
+
+
+
+-db.teacher.insertMany([ ]);
+-db.teacher.insertMany([{
+ans::
+...     name:'monu',
+...     subject:'java'
+... },{
+...     name:'monu',
+...     subject:'java'
+... },{
+...     name:'monu',
+...     subject:'java'
+... }])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('65890c67398e41625aa38bb1'),
+    '1': ObjectId('65890c67398e41625aa38bb2'),
+    '2': ObjectId('65890c67398e41625aa38bb3')
+  }
+}

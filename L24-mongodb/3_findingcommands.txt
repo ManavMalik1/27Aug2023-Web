@@ -1,0 +1,91 @@
+to find dicuments:::::::
+
+-db.teacher.find({subject:'java'})
+ans::
+[
+  {
+    _id: ObjectId('65890c67398e41625aa38bb1'),
+    name: 'monu',
+    subject: 'java'
+  },
+  {
+    _id: ObjectId('65890c67398e41625aa38bb2'),
+    name: 'monu',
+    subject: 'java'
+  },
+  {
+    _id: ObjectId('65890c67398e41625aa38bb3'),
+    name: 'monu',
+    subject: 'java'
+  }
+]
+
+
+-db.teacher.findOne({subject:'java'})
+ans::
+{
+  _id: ObjectId('65890c67398e41625aa38bb1'),
+  name: 'monu',
+  subject: 'java'
+}
+
+find all teachers those who teach C++ OR java
+there are many queries in arrays like 
+......   $in:[]
+......   $size:[]
+......   $all:[]
+......   $and:[]
+
+db.teacher.find( {subject: { $in:  ['C++','java']}})
+ans::::
+db.teacher.find({subject:{$in:['C++','java']}})
+[
+  {
+    _id: ObjectId('65890b30398e41625aa38bb0'),
+    name: 'manav',
+    subject: 'C++'
+  },
+  {
+    _id: ObjectId('65890c67398e41625aa38bb1'),
+    name: 'monu',
+    subject: 'java'
+  },
+  {
+    _id: ObjectId('65890c67398e41625aa38bb2'),
+    name: 'monu',
+    subject: 'java'
+  },
+  {
+    _id: ObjectId('65890c67398e41625aa38bb3'),
+    name: 'monu',
+    subject: 'java'
+  }
+]
+
+
+find all teachers those who teach C++ and name is manav
+db.teacher.find({
+    $and:[
+        {name:'manav'},
+        {subject:'C++'}
+    ]
+})
+
+
+ans:::
+
+db.teacher.find({
+...     $and:[
+...         {name:'manav'},
+...         {subject:'C++'}
+...     ]
+... })
+[
+  {
+    _id: ObjectId('65890b30398e41625aa38bb0'),
+    name: 'manav',
+    subject: 'C++'
+  }
+]
+
+
